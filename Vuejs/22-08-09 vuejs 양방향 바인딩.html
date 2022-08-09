@@ -7,7 +7,6 @@
     <title>vuejs 양방향 바인딩</title>
     <!-- vue CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  
 </head>
 <body>
 
@@ -15,7 +14,8 @@
     <!-- 바인딩을 하기 위해서는 v-bind: 를 사용한다. v-bind 생략후 :(colon만 사용가능) -->
 
     <div id="app">
-        <h1>{{year}}</h1>
+        <h1>주제 : '{{topic}} '양방향 바인딩</h1>
+        <h3>{{year}}</h3>
         {{year}} <br>
         <!-- alert이라는 함수 호출 -->
         <button v-on:click="alert()">hello world</button>
@@ -52,6 +52,7 @@
         new Vue({
             el: '#app',
             data: {
+                topic: 'v-model:',
                 year: 2022,
                 text:'양방향 바인딩',
                 link: 'https://kr.vuejs.org/v2/guide/'

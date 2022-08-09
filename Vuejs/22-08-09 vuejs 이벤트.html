@@ -17,7 +17,9 @@
     <!-- 이벤트 실행하기 위해서는 v-on: 을 사용한다. v-on: => @ 으로 대체 가능-->
 
     <div id="app">
-        <h1>{{year}}</h1>
+        <h1>주제 : 이벤트 실행</h1>
+        <h1>'{{topic}} ' => ' @ '로 대체 가능</h1><br>
+        <h3>{{year}}</h3>
         {{year}} <br>
         <!-- alert이라는 함수 호출 -->
         <button v-on:click="alert()">hello world</button>
@@ -43,6 +45,7 @@
         new Vue({
             el: '#app',
             data: {
+                topic: 'v-on:',
                 year: 2022,
                 type:'text',
                 link: 'https://kr.vuejs.org/v2/guide/'
