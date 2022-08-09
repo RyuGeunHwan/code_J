@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <!-- 이벤트 실행하기 위해서는 v-on: 을 사용한다. v-on: => @ 으로 대체 가능-->
+    <!-- 이벤트 실행 v-on: -->
 
     <div id="app">
         <h1>{{year}}</h1>
@@ -26,19 +26,23 @@
         <button v-on:click="plus()">더하기</button>
 
         <!-- minus이라는 함수 호출 -->
-        <button v-on:click="minus()">빼기</button><br>
-
+        <button v-on:click="minus()">빼기</button>
+        <br>
+        </br>
         <!-- from태그는 default: reload를 한다. -->
         <!-- .prevent  =>  이벤트 수식어로써 제출 이벤트가 페이지를 리로드하지 않습니다. -->
         <form v-on:submit.prevent="submit">
             <input :type="type"><br>
             <button type="submit">Submit</button>
         </form>
-
+        <br>
+        </br>
         <!-- vuejs함수 확인, a태그를 link+file을 합쳐줬다. -->
         <a :href="vuejs('events.html')">vuejs 이벤트 핸들링 참고 사이트</a>
 
     </div>
+
+
     <script>
         new Vue({
             el: '#app',

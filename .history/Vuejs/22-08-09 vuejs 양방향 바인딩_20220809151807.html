@@ -15,6 +15,7 @@
 <body>
 
     <!-- 이벤트 실행하기 위해서는 v-on: 을 사용한다. v-on: => @ 으로 대체 가능-->
+    <!-- 바인딩을 하기 위해서는 v-bind: 를 사용한다. v-bind 생략후 :(colon만 사용가능) -->
 
     <div id="app">
         <h1>{{year}}</h1>
@@ -26,25 +27,30 @@
         <button v-on:click="plus()">더하기</button>
 
         <!-- minus이라는 함수 호출 -->
-        <button v-on:click="minus()">빼기</button><br>
-
+        <button v-on:click="minus()">빼기</button>
+        <br>
+        </br>
         <!-- from태그는 default: reload를 한다. -->
         <!-- .prevent  =>  이벤트 수식어로써 제출 이벤트가 페이지를 리로드하지 않습니다. -->
         <form v-on:submit.prevent="submit">
-            <input :type="type"><br>
+            <input :type="text" :value="text" @keyup="updateText"><br>
+            <!-- inputbox 미리보기 -->
+            {{ text }} <br>
             <button type="submit">Submit</button>
         </form>
-
+        <br>
+        </br>
         <!-- vuejs함수 확인, a태그를 link+file을 합쳐줬다. -->
         <a :href="vuejs('events.html')">vuejs 이벤트 핸들링 참고 사이트</a>
-
     </div>
+
+
     <script>
         new Vue({
             el: '#app',
             data: {
                 year: 2022,
-                type:'text',
+                text:'text',
                 link: 'https://kr.vuejs.org/v2/guide/'
             },
             methods: {
@@ -63,6 +69,13 @@
                 submit(){
                     alert('submited')
                     console.log('hello world');
+                },
+                updateText(event){
+                    // keyup이벤트의 Object를 event에 대입한 것.
+                    if(event.key == "Enter"){
+                        console.log("hello world")
+
+                    }
                 }
             }
         })
