@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs 이벤트</title>
+    <!-- vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script type="module">
+        import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.esm.browser.js'
+      </script>
+</head>
+<body>
+
+    <!-- 이벤트 실행 v-on: -->
+
+    <div id="app">
+        <h1>{{year}}</h1>
+        {{year}} <br>
+        <!-- alert이라는 함수 호출 -->
+        <button v-on:click="alert()">hello world</button>
+
+        <!-- plus이라는 함수 호출 -->
+        <button v-on:click="plus()">더하기</button>
+
+        <!-- minus이라는 함수 호출 -->
+        <button v-on:click="minus()">빼기</button><br>
+
+        <!-- from태그는 default: reload를 한다. -->
+        <!-- .prevent  =>  이벤트 수식어로써 제출 이벤트가 페이지를 리로드하지 않습니다. -->
+        <form v-on:submit.prevent="submit">
+            <input :type="type"><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <a :href="vuejs('html')">vuejs 이벤트 핸들링 참고 사이트</a>
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                year: 2022,
+                type:'text',
+                link: 'https://kr.vuejs.org/v2/guide/events.'
+            },
+            methods: {
+                vuejs(file){
+                    return this.link+file;
+                },
+                alert(){
+                    alert('hello world!');
+                },
+                plus(){
+                    this.year++;
+                },
+                minus(){
+                    this.year--;
+                },
+                submit(){
+                    alert('submited')
+                    console.log('hello world');
+                }
+            }
+        })
+    </script>
+</body>
+</html>
