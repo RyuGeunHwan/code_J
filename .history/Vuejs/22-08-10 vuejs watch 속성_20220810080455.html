@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}} <br>
+        <button @click="changeMessage()">Click</button><br>
+        {{updated}}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                message: '헬로우',
+                updated: '아니요'
+            },
+            methods:{
+                changeMessage(){
+                    this.message = '류근환';
+                }
+            },
+            computed:{
+            reversedMessage(){
+                return this.message.split('').reverse().join('');
+            }
+            },
+            watch:{ // watch에서 message가 변경되는걸 지켜보다가 newVal과 oldVal를 출력 후 updated값 변경
+                // newVal : 업데이트된 값 , oldVal : 기존 값
+                message(newVal, oldVal){
+                    console.log(newVal,oldVal);
+                    this.updated = '네';
+                }
+            }
+        })
+    </script>
+</body>
+</html>

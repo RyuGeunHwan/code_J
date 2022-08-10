@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs 클래스 & 스타일바인딩</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red{
+            color: red;
+        }   
+
+        .font-bold{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div :class="{ red: isRed, 'font-bold': isBold}">Hello</div>
+        <button @click="update()">Click</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                isRed: false,
+                isBold: false
+            },
+            methods:{
+                update(){
+                    this.isRed = !this.isRed;
+                    this.isBold = !this.isBold;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
