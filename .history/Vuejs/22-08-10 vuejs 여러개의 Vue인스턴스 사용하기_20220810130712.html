@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러개의 Vue인스턴스 사용하기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{name}} <br>
+        <!-- button을 누르게 되면 #app-1의 name인 app-1이 app updated로 바뀌게된다. Vue인스턴스를 변수에 넣어서 사용하였기 때문에. -->
+        <button @click="changeText">Click</button>
+    </div>
+    <div id="app-1">
+        {{name}} <br>
+        <button @click="changeText">Click</button>
+    </div>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data:{
+              name: 'app'
+            },
+            methods:{
+                changeText(){
+                app1.name = 'app updated'
+               }
+            }
+        })
+
+       const app1 = new Vue({
+            el: '#app-1',
+            data:{
+              name: 'app-1'
+            },
+            methods:{
+               changeText(){
+                app.name = 'app-1 updated'
+               }
+            }
+        })
+    </script>
+</body>
+</html>
