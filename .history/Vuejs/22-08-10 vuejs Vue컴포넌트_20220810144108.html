@@ -14,7 +14,6 @@
         <button @click="changeText">Click</button> -->
         <!-- component의 사용은 설정해주었던 이름을 태그로 사용해주면 된다. -->
         <kossie-button></kossie-button>
-
     </div>
     <hr><hr>
 
@@ -22,21 +21,19 @@
     <div id="app-1">
        <!-- {{name}} <br>
         <button @click="changeText">Click</button> 
-        <kossie-button> 태그로 출력하는 kossie-button은 전역으로 등록한 component이다. -->
-        <kossie-button></kossie-button>
+        <kossie-button> 태그로 출력하는 kossie-button은 전역으로 등록한 component이다.
+        <kossie-button></kossie-button> -->
     </div>
 
 
     <script>
-        //vue인스턴스가 생성되기전에 Vue.component를 먼저 생성
-
-        // hello world 컴포넌트 전역 등록
-        // Vue.component('hello-world',{
-        //     template:`<div>hello world</div>`
-        // })
+        //vue인스턴스가 생성되기전에 Vue.component생성
+        Vue.component('hello-world',{
+            template:`<div>hello world</div>`
+        })
 
 
-        // // 컴포넌트 전역 등록(어떤 vue인스턴스에서도 사용가능)
+        // // 전역 컴포넌트 등록(어떤 vue인스턴스에서도 사용가능)
         // Vue.component('kossie-button',{
         //     //template안에는 html태그가 들어가게된다.
         //     template: 
@@ -63,17 +60,8 @@
         // });
 
 
-        // hello world 지역등록
-        const HelloWorld = {
-            template: `<div>hello world</div>`
-            
-        };
-
         //지역 컴포넌트 등록
         const KossieButton = {
-            components:{
-                'hello-world' : HelloWorld
-            },
             template: 
             `
             <div>
