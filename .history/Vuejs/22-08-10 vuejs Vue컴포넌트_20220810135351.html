@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 컴포넌트 전역등록 방법 및 사용</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- {{name}} <br>
+         button을 누르게 되면 #app-1의 name인 app-1이 app updated로 바뀌게된다. Vue인스턴스를 변수에 넣어서 사용하였기 때문에.
+        <button @click="changeText">Click</button> -->
+        <!-- component의 사용은 설정해주었던 이름을 태그로 사용해주면 된다. -->
+        <kossie-button></kossie-button>
+    </div>
+    <hr><hr>
+
+
+    <!-- <div id="app-1"> -->
+        <!-- {{name}} <br>
+        <button @click="changeText">Click</button> -->
+    <!-- </div>
+    <kossie-button></kossie-button>
+    </div> -->
+
+
+    <script>
+        //vue인스턴스가 생성되기전에 Vue.component생성
+        Vue.component('hello-world',{
+            template:`<div>hello world</div>`
+        })
+        // 완성된 component는 전역으로 등록이 된것이다.
+        Vue.component('kossie-button',{
+            //template안에는 html태그가 들어가게된다.
+            template: 
+            //template는 하나의 태그안에 모든 콘텐츠들이 있어야한다는 vue의 규칙이 있다.
+            `
+            <div>
+                {{name}} <br>
+                <hello-world></hello-world>
+                <button @click="changeText">Click</button>
+            </div>
+            `,
+
+            //컴포넌트 만들때 함수를 만들어서 Object를 return 해주면 된다.
+            data(){
+                return{
+                    name: 'component'
+                }
+            },
+            methods:{
+                changeText(){
+                    this.name = 'app updated'
+               }
+            }
+        });
+
+        const KossieButton = {
+            this.name = 'app update';
+        }
+
+        const app = new Vue({
+            el: '#app',
+            // data:{
+            //   name: 'app'
+            // },
+            // methods:{
+            //     changeText(){
+            //         this.name = 'app updated'
+            //    }
+            // }
+        })
+
+    //    const app1 = new Vue({
+    //         el: '#app-1',
+    //         // data:{
+    //         //   name: 'app-1'
+    //         // },
+    //         // methods:{
+    //         //    changeText(){
+    //         //         this.name = 'app-1 updated'
+    //         //    }
+    //         // }
+    //     })
+    </script>
+</body>
+</html>
