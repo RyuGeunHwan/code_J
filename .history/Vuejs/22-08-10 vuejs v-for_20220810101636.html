@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for(vuejs 반복문)</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            {{people[0].name}} {{people[0].age}}
+        </div>
+        <div>
+            {{people[1].name}} {{people[1].age}}
+        </div>
+        <div>
+            {{people[2].name}} {{people[2].age}}
+        </div>
+        <div>
+            {{people[3].name}} {{people[3].age}}
+        </div>
+
+        <hr>
+
+        
+        <div v-for="(person, index) in people" :key="person.id"><!-- key : 고유한 값이어야 한다 -->
+            id = {{person.id}}, name = {{person.name}}, age= {{person.age}} / index = {{index}}
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+              people: [
+                {id: 1, name : 'a', age: '20'},
+                {id: 2, name : 'b', age: '21'},
+                {id: 3, name : 'c', age: '22'},
+                {id: 4, name : 'd', age: '23'},
+                {id: 5, name : 'e', age: '24'},
+              ]
+            },
+            methods:{
+               
+            }
+        })
+    </script>
+</body>
+</html>

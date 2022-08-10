@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if & v-show</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p :style="styleObject" v-if="show">v-if == 조건문, <br> v-if가 true -> 랜더링 O <br> false -> 랜더링 X</p>
+        <div v-if="show">Yes</div>
+        <button @click="toggleShow">Toggle</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                show: true,
+                styleObject:{
+                    fontSize: '30px',
+                    color: 'red',
+                    fontWeight: 'bold'
+                }
+            },
+            methods:{
+                toggleShow(){
+                    this.show = !this.show;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

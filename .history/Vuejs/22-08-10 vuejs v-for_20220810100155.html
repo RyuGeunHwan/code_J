@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            {{peaple[0].name}} {{peaple[0].age}}
+            {{peaple[1].name}} {{peaple[1].age}}
+            {{peaple[2].name}} {{peaple[2].age}}
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+              peaple: [
+                {name : 'a', age: '20'},
+                {name : 'b', age: '21'},
+                {name : 'c', age: '22'},
+              ]
+            },
+            methods:{
+               
+            }
+        })
+    </script>
+</body>
+</html>

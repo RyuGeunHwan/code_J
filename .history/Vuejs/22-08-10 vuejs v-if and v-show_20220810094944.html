@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if & v-show</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p :style="styleObject">v-if == 조건문, <br> v-if가 true -> 랜더링 O <br> false -> 랜더링 X</p>
+
+        <div v-if="show">v-if => true</div>
+        <div v-else>v-else</div>
+        <button @click="toggleShow">Toggle</button>
+
+        <!-- 여러개의 태그를 한번에 없애고 나타나게 하는 방법 -->
+        <template v-if="number === 1">
+        <p>template으로 한번에 묶은 아이들</p>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <p>template으로 한번에 묶은 아이들</p>
+        </template>
+        <!-- 여러개의 태그를 한번에 없애고 나타나게 하는 방법 -->
+        <div v-else-if="number === 2">number 2</div>
+        <div v-else>No</div>
+        <button @click="increaseNumber">Increase</button> {{number}}
+
+
+
+
+
+        <br>
+        <br>
+        <p>v-show start!!!</p>
+        <div v-show="show">Yes</div>
+        <br>
+        <button @click="toggle">Toggle</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                show: false,
+                number: 1,
+                styleObject:{
+                    fontSize: '30px',
+                    color: 'red',
+                    fontWeight: 'bold'
+                }
+            },
+            methods:{
+                toggleShow(){
+                    this.show = !this.show;
+                    // !this.show 와 false의 차이점 
+                    // 1. !this.show는 다시 로드 됨.
+                    // 2. false는 값이 변경되어서 값이 false로 고정되어있음. 
+                },
+
+                increaseNumber(){
+                    this.number++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
