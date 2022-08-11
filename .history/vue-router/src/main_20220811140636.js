@@ -2,12 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import KossieCoder from '@/components/KossieCoder.vue';
 
 Vue.config.productionTip = false
-Vue.component('KossieCoder',KossieCoder);
 
-
+//Vue 인스턴스 생성
 new Vue({
   router,
   store,

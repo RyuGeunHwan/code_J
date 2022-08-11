@@ -5,7 +5,6 @@ import store from './store'
 import KossieCoder from '@/components/KossieCoder.vue';
 
 Vue.config.productionTip = false
-Vue.component('KossieCoder',KossieCoder);
 
 
 new Vue({

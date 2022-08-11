@@ -8,12 +8,12 @@
 
 
 <script>
-import KossieCoder from '@/components/KossieCoder.vue';
+// import KossieCoder from '@/components/KossieCoder.vue';
 
 export default{
-  components:{
-    KossieCoder
-  }
+  // components:{
+  //   KossieCoder
+  // }
 
 }
 </script>

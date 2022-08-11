@@ -1,0 +1,11 @@
+* 공통 : 체크리스트가 나오면Router && Vuex 선택! 기본적인 것들. 뒤로는 다 Enter
+* 프로젝트 해당 폴더에 설치 요망
+
+
+1. 뷰 설치 명령어 
+    터미널 => vue create {project-name}
+
+2. 뷰 파일없이 설치하는 명령어
+    터미널 => npx @vue/cli create {project-name}
+
+참고사이트 == https://www.youtube.com/watch?v=5lDEee-Ur34&list=PLB7CpjPWqHOtYP7P_0Ls9XNed0NLvmkAh&index=13

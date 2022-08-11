@@ -10,17 +10,16 @@
 <body>
     <a href="https://kr.vuejs.org/v2/guide/components.html#%EC%A0%84%EC%97%AD-%EB%93%B1%EB%A1%9D">컴포넌트 공식사이트</a>
     <div id="component">
-
-       <componentExplanation></compcomponentExplanation>
-    
+        <h2>컴포넌트 이해하기</h2>
+        <componentExplanation></componentExplanation>
     </div>
-    <hr>
     <div id="app">
         <!-- {{name}} <br>
          button을 누르게 되면 #app-1의 name인 app-1이 app updated로 바뀌게된다. Vue인스턴스를 변수에 넣어서 사용하였기 때문에.
         <button @click="changeText">Click</button> -->
         <!-- component의 사용은 설정해주었던 이름을 태그로 사용해주면 된다. -->
         <kossie-button></kossie-button>
+
     </div>
     <hr><hr>
 
@@ -70,27 +69,18 @@
             
         Vue.component('componentExplanation',{
             template:
-                `
-                <div>
-                    <h2>컴포넌트 이해하기</h2>
-                    <p>컴포넌트 전역으로 등록해서 이용하기</p><br>
-                    {{componentExplanation}}
-                    <button @click="changeExplanation">Click</button>
-                </div>
-                `,
+            `<div>
+                <p>컴포넌트 전역으로 등록해서 이용하기</p><br>
+                <p>{{componentExplanation}}</p>
+            </div>`
+            ,
             data(){
                 return{
-                    componentExplanation: '컴포넌트란 '
-                }
-            },
-            methods:{
-                changeExplanation(){
-                    this.changeExplanation = '이것은 컴포넌트여'
+                    componentExplanation: '컴포넌트란'
                 }
             }
         });
 
-        
         // hello world 지역등록
         const HelloWorld = {
             template: `<div>hello world</div>`

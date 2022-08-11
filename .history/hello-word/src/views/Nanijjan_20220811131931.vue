@@ -1,18 +1,18 @@
 <template>
   <div>
-    <h1>This is Home page</h1>
-    <h2>이곳은 홈 페이지입니다.</h2>
+    <h1>This is Nani Jjang page</h1>
+    <h2>이곳은 나니 짱 페이지입니다.</h2>
     <KossieCoder></KossieCoder>
   </div>
 </template>
 
 <script>
-// KossieCoder를 가져오기 @(src를 의미함)/components/KossieCoder.vue 여기에서
-import KossieCoder from '@/components/KossieCoder.vue';
+// // KossieCoder를 가져오기 @(src를 의미함)/components/KossieCoder.vue 여기에서
+// import KossieCoder from '@/components/KossieCoder.vue';
 
 export default{
   components : {
-    KossieCoder
+    // KossieCoder
   },
   data(){
     return{ // Object를 return
@@ -32,22 +32,3 @@ h2{
   color : red
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
