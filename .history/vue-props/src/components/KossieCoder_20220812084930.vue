@@ -1,8 +1,8 @@
 <template>
     <div>
         <h1>{{title}}</h1>
-        <h3>{{name}}</h3>
-        <!-- <p>{{  name  }}</p> -->
+        <h3>{{myName}}</h3>
+        <p>{{  name  }}</p>
         <button @click="updateName">Change Name</button>
     </div>
 </template>
@@ -17,7 +17,7 @@ export default {
             default: 'default title' 
             //default : 자식컴포넌트에서 props를 받아오지 않아도 default로 보여줌.
         },
-        name: {
+        myName: {
             type : String,
             required : false,
             //required = 무조건 항상 보내줘야한다는것
@@ -27,7 +27,7 @@ export default {
     },
     data(){
         return{
-            // name : 'Kossie Coder'
+            name : 'Kossie Coder'
         }
     },
     methods: {

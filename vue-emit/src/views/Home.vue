@@ -3,20 +3,32 @@
   <div>
     <h1>This is Home Page</h1>
     <h2>이곳은 홈 페이지 입니다.</h2>
-    <KossieCoder name="Ryu"/>
+    <form action="">
+      <InputField v-model="name"/>
+        <button>Submit</button>
+    </form>
+    {{name}}
   </div>
 </template>
 
 <!-- script태그 : 옵션,데이터,computed,watch 등이 들어가는 구역 -->
 <script>
-import KossieCoder from '@/components/KossieCoder.vue';
-
+import InputField from '@/components/InputField.vue'
 
 export default {
-  components: {
-    // import한 컴포넌트를 사용하겠다는 설정
-    KossieCoder
-  }
+  components:{
+    InputField
+  },
+  data(){
+    return{
+      name : ''
+    }
+  },
+  // methods:{
+  //   updateName(name){
+  //     this.name=name;
+  //   }
+  // }
 }
 </script>
 

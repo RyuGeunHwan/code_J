@@ -3,7 +3,7 @@
   <div>
     <h1>This is Home Page</h1>
     <h2>이곳은 홈 페이지 입니다.</h2>
-    <KossieCoder name="Ryu"/>
+    <KossieCoder title="title2" props="props1"/>
   </div>
 </template>
 

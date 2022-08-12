@@ -10,7 +10,7 @@
 <script>
 export default {
     props: {
-        title: {
+        titlezz: {
             type : String,
             required : false ,
             //required = 무조건 항상 보내줘야한다는것

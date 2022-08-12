@@ -3,19 +3,23 @@
   <div>
     <h1>This is Home Page</h1>
     <h2>이곳은 홈 페이지 입니다.</h2>
-    <KossieCoder name="Ryu"/>
+    <form action="">
+      <label for="">Name</label>
+        <input type="text" v-model="name" style="padding: 30px; border:2px solid green"><br>
+        <button>Submit</button>
+    </form>
   </div>
 </template>
 
 <!-- script태그 : 옵션,데이터,computed,watch 등이 들어가는 구역 -->
 <script>
-import KossieCoder from '@/components/KossieCoder.vue';
 
 
 export default {
-  components: {
-    // import한 컴포넌트를 사용하겠다는 설정
-    KossieCoder
+  data(){
+    return{
+      name : ''
+    }
   }
 }
 </script>
