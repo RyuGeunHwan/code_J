@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch('URL주소')
+            .then(function(resolved){ //서버에서 응답이 성공하면 then 콜백함수 실행
+        //		resolved.json().then(function(data){
+        //			console.log('data',data);
+        //		});
+                return resolved.json(); //promise를 return
+            })
+            .catch(function(rejected){
+                console.log('rejected',rejected);
+            })
+            .then(function(data){
+                console.log('data',data)
+            });
+    </script>
+</body>
+</html>
