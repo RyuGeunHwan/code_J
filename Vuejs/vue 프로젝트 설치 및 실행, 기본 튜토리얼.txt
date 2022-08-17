@@ -1,0 +1,192 @@
+* vue js 프로젝트 생성
+	+ 프로젝트 생성 명령어
+		- vue create "프로젝트 이름"
+		- Manually select features 선택
+		- 방향키 + space bar로 원하는 설정 선택
+		- 프로젝트 생성까지 Enter
+	+ 프로젝트 실행 명령어
+		- 실행한 프로젝트 폴더 들어간 후 ( ls(현재 경로 조회), cd(폴더 및 파일 들어가기)를 이용한다. )
+		- npm run serve
+		- 랜더링할 IP주소 나옴.
+
+
+* 애플리케이션 인스턴스(애플리케이션 생성)
+	+ import { createApp } from 'vue'
+	  const app = createApp({
+	    /* root component options */
+	  })
+	  
+	+ const app = new Vue();
+
+* mount(애플리케이션 실행 함수)
+	+ 인스턴스는 해당 .mount()메서드가 호출될 때까지 아무 것도 렌더링하지 않습니다.
+		ex) <div id="app"></div>
+			app.mount('#app')
+
+* 바인딩(연결)
+	+ 데이터 바인딩의 가장 기본적인 형태는 "Mustache" 구문(이중 중괄호)을 사용
+		ex) <span>Message: {{ msg }}</span>
+		(msg속성이 변경될 때마다 업데이트가 된다.)
+		
+	+ 속성과 연결할 수 있는 바인딩 지시문 ' v-bind: '
+		ex) <div v-bind:id="dynamicId"></div> id속성과 바인딩
+			v-bind전용 단축 구문 => ' : ' (colon)
+		ex) <div :id="dynamicId"></div>
+		
+* Boolean Attributes(Boolean 속성)
+	+ 참/거짓 값을 나타낼 수 있는 속성
+		ex) <button :disabled="isButtonDisabled">Button</button>
+		
+* 여러 속성을 동적으로 바인딩
+	+ 여러 속성을 나타내는 JavaScript 객체가 있는 경우:
+		data() {
+		  return {
+			objectOfAttrs: {
+			  id: 'container',
+			  class: 'wrapper'
+			}
+		  }
+		}
+		
+	+ <div v-bind="objectOfAttrs"></div> 로 사용가능
+	
+* 이벤트 수신
+	+ <a v-on:click="doSomething"> ... </a>
+
+	  <!-- shorthand -->
+	  v-on전용 단축 구문 => ' @ ' 
+	  <a @click="doSomething"> ... </a>
+	  
+	  
+* 반복되고 복잡한 템플릿은 computed or methods를 사용하는 것이 좋다.
+	+ 복잡한 템플릿
+		- export default {
+			  data() {
+				return {
+				  author: {
+					name: 'John Doe',
+					books: [
+					  'Vue 2 - Advanced Guide',
+					  'Vue 3 - Basic Guide',
+					  'Vue 4 - The Mystery'
+					]
+				  }
+				}
+			  }
+			}
+
+		- <p>Has published books:</p>
+		  <span>{{ author.books.length > 0 ? 'Yes' : 'No' }}</span>
+		  
+	+ computed or methods 사용
+		- export default {
+			  data() {
+				return {
+				  author: {
+					name: 'John Doe',
+					books: [
+					  'Vue 2 - Advanced Guide',
+					  'Vue 3 - Basic Guide',
+					  'Vue 4 - The Mystery'
+					]
+				  }
+				}
+			  }
+			},
+			computed or methods: {
+				publishedBooksMessage(){
+					return author.books.length > 0 ? 'Yes' : 'No';
+				}
+			}
+			
+		- <p>Has published books:</p>
+		  <span>{{ publishedBooksMessage }}</span> // computed
+		  <span>{{ publishedBooksMessage() }}</span> // methods
+	
+	+ computed, methods 차이점
+		- computed 인자X , methods 인자O
+		- computed는 한번 계산한 결과값을 호출하는 방식
+		- methods는 랜더링이 될 때마다 항상 함수를 실행한다.
+	 
+	 
+* getter setter 속성(드물게 사용)
+	+ <script>
+		export default {
+		  data() {
+			return {
+			  firstName: 'John',
+			  lastName: 'Doe'
+			}
+		  },
+		  computed: {
+			fullName: {
+	// getter
+			  get() {
+				return this.firstName + ' ' + this.lastName
+			  },
+	// setter
+			  set(newValue) {
+				// Note: we are using destructuring assignment syntax here.
+				[this.firstName, this.lastName] = newValue.split(' ')
+			  }
+			}
+		  }
+		}
+	  </script>
+
+* 클래스 바인딩(shortcut문법으로 v-bind:class=""를 :class=""로 간단하게 표현 가능)
+	+ 참고 사이트 : https://coonihong.tistory.com/21
+	+ 객체에 바인딩
+		- 객체 속성에는 클래스 이름, 값은 조건을 넣어줌
+		- v-bind:class="{클래스 이름 : 조건}"
+			ex) <div v-for="item in items" v-bind:class="{done : item.purchased}">{{item.subject}}</div>
+			(item.purchased의 type : boolean)
+				풀이 : item.purchased의 값이 true이면 해당 태그의 클래스 이름을 "done"으로 부여한다.
+				
+	+ 배열에 바인딩(배열의 경우 클래스를 추가로 바인딩 시킬 수 있다는 장점이 있다. 예를 들면 true면 'done', false면 'important')
+		- 여러개의 속성을 적용할 수 있다.
+		- v-bind:class="[조건? '클래스 이름' : '']"
+			ex) <div v-for="item in items" v-bind:class="[item.purchased ? 'done' : 'important']">{{item.subject}}</div>
+				풀이 : item.purchased의 값이 true이면 :기준 왼쪽의 "done"을 클래스 이름으로 false면 오른쪽의 "important"를 부여한다.
+	
+* 스타일 바인딩(v-bind:style=""  or :style="")
+	+ 객체에 바인딩
+		  <template>
+			<div :style="{color: activeColor, 'font-size': fontSize+"px"}"></div>
+		  </template>
+		  
+		  <script>
+			export default(){
+				data() {
+				  return {
+					activeColor: 'red',
+					fontSize: 13
+				  }
+				}
+			  }
+		  </script>
+	+ Object를 이용하여 깔끔한 바인딩 
+		  <template>
+			<div :style="styleObject"></div>
+		  </template>
+		  
+		  <script>
+				export default(){
+					data() {
+					  return {
+						styleObject:{
+							color: 'red',
+							fontSize: '13px'
+					  }
+					}
+				  }
+				}
+		  </script>
+		
+	
+
+* 주의 사항
+	+ 템플릿(HTML 파일에 직접 작성된 템플릿)을 사용할 때는 브라우저가 속성 이름을 소문자로 강제 변환하므로 대문자로 키 이름을 지정하는 것도 피해야 한다.
+	ex) <a :[someAttr]="value"> ... </a>
+		- 브라우저가 속성 이름을 소문자로 강제 변환하므로 대문자로 키 이름을 지정하는 것도 피해야 한다.
+		- someattr 속성의 이름이 잇으면 코드가 작동하지 않는다.
