@@ -3,18 +3,19 @@
 
  // 함수 선언문(기존에 알고 있던 함수)는 호이스팅 가능!(단어장 참고) 
  
- showData();
+//  showData();
  
- function showData(){ //함수 선언문
-	console.log('data')
- } //result ==> data
+//  function showData(){ //함수 선언문
+// 	console.log('data')
+//  } //result ==> data
  
  // 하지만, 함수 표현식(arrow function)은 호이스팅 불가능! 함수 표현식은 코드에 도달해야 생성과 사용이 가능하다.
  
 //  data();
- const data = ()=>{ //함수 표현식 , 함수 생성, 지금부터 함수 사용가능
-	console.log('data')
- } //result ==> 'error'
+ 
+//  const data = ()=>{ //함수 표현식 , 함수 생성, 지금부터 함수 사용가능
+// 	console.log('data')
+//  } //result ==> 'error'
 
 
 
@@ -72,45 +73,8 @@ console.log(getObject().name);
 console.log(getObject().age);
 
 
-
-
-
-// 자바스크립트 this 바인딩 : 호출되는 방법과 무관하게 this를 묶어서 고정시키는것 => bind
-// var someone ={
-//     name : 'ninano',
-//     whoAmI : function(){
-//         console.log(this); // this : { name: 'ninano', whoAmI: [Function: whoAmI] }
-//     }
-// };
-// someone.whoAmI();
-
-// var myWhoAmI = someone.whoAmI;
-// myWhoAmI();
-
-// var bindWhoAmI = myWhoAmI.bind(someone);
-// bindWhoAmI();
-
-
-const cat = {
-    name: 'meow',
-    foo1: function() {
-      const foo2 = function() {
-        console.log(this.name);
-      }
-      foo2();
-    }
-  };
-  
-  cat.foo1();	// undefined
-
-//   const cat = {
-//     name: 'meow',
-//     foo1: function() {
-//       const foo2 = () => {
-//         console.log(this.name);
-//       }
-//       foo2();
-//     }
-//   };
-  
-//   cat.foo1();	// meow
+//////////////////////////////////////////////////////////////////
+const test = ()=>{
+    count = 1;
+    console.log('this : '+this.count)
+}

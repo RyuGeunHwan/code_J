@@ -94,8 +94,9 @@ console.log(getObject().age);
 const cat = {
     name: 'meow',
     foo1: function() {
+        var test = 'test';
       const foo2 = function() {
-        console.log(this.name);
+        console.log(this.test);
       }
       foo2();
     }

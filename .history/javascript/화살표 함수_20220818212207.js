@@ -72,45 +72,13 @@ console.log(getObject().name);
 console.log(getObject().age);
 
 
+//////////////////////////////////////////////////////////////////
+const test = ()=>{
+    count = 1;
+    console.log('this : '+this.count);
+}
 
-
-
-// 자바스크립트 this 바인딩 : 호출되는 방법과 무관하게 this를 묶어서 고정시키는것 => bind
-// var someone ={
-//     name : 'ninano',
-//     whoAmI : function(){
-//         console.log(this); // this : { name: 'ninano', whoAmI: [Function: whoAmI] }
-//     }
-// };
-// someone.whoAmI();
-
-// var myWhoAmI = someone.whoAmI;
-// myWhoAmI();
-
-// var bindWhoAmI = myWhoAmI.bind(someone);
-// bindWhoAmI();
-
-
-const cat = {
-    name: 'meow',
-    foo1: function() {
-      const foo2 = function() {
-        console.log(this.name);
-      }
-      foo2();
-    }
-  };
-  
-  cat.foo1();	// undefined
-
-//   const cat = {
-//     name: 'meow',
-//     foo1: function() {
-//       const foo2 = () => {
-//         console.log(this.name);
-//       }
-//       foo2();
-//     }
-//   };
-  
-//   cat.foo1();	// meow
+function test1(){
+    count = 1;
+    console.log(count);
+}

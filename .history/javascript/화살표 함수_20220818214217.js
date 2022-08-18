@@ -91,26 +91,26 @@ console.log(getObject().age);
 // bindWhoAmI();
 
 
-const cat = {
-    name: 'meow',
-    foo1: function() {
-      const foo2 = function() {
-        console.log(this.name);
-      }
-      foo2();
-    }
-  };
-  
-  cat.foo1();	// undefined
-
-//   const cat = {
+// const cat = {
 //     name: 'meow',
 //     foo1: function() {
-//       const foo2 = () => {
+//       const foo2 = function() {
 //         console.log(this.name);
 //       }
 //       foo2();
 //     }
 //   };
   
-//   cat.foo1();	// meow
+//   cat.foo1();	// undefined
+
+  const cat = {
+    name: 'meow',
+    foo1: function() {
+      const foo2 = () => {
+        console.log(this.name);
+      }
+      foo2();
+    }
+  };
+  
+  cat.foo1();	// meow
