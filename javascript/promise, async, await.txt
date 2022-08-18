@@ -1,4 +1,4 @@
-* JavaScript (synctonous식 언어)
+# JavaScript (synctonous식 언어)
 	+ setTimeout(function(){'내용'}, 3000) 
 	  //3초 뒤에 function 실행
 	  // 효율적이지 않다.

@@ -1,3 +1,6 @@
+콜백 함수(Callback function)는 특정 시점에서 호출되는 함수입니다. 명시적으로 호출되는 일반 함수와는 다르게 등록되어 있다가 특정 조건(시점)을 만족하면 호출이됩니다.
+
+
 	
 1. 	
 	const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
