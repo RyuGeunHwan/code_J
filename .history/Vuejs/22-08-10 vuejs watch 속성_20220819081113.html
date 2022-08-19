@@ -10,16 +10,16 @@
 <body>
     <a href="https://kr.vuejs.org/v2/guide/computed.html#watch-%EC%86%8D%EC%84%B1">watch속성 공식사이트</a>
     <div id="app">
-        data => this.message : {{message}} <br>
+        {{message}} <br>
         <button @click="changeMessage()">Click</button><br>
         watch : {{updated}} <br>
         <p>computed : {{reversedMessage}}</p>
     </div>
-<script>
+    <script>
         new Vue({
             el: '#app',
             data:{
-                message: 'hello',
+                message: '헬로우',
                 updated: '아니요'
             },
             methods:{
@@ -28,15 +28,14 @@
                 }
             },
             computed:{
-                reversedMessage : function(){
-                    return this.message.split('').reverse().join('');
-                }
+            reversedMessage(){
+                return this.message.split('').reverse().join('');
+            }
             },
             watch:{ // watch에서 message가 변경되는걸 지켜보다가 newVal과 oldVal를 출력 후 updated값 변경
                 // newVal : 업데이트된 값 , oldVal : 기존 값
                 message(newVal, oldVal){
-                    console.log('newVal : '+newVal);
-                    console.log('oldVal : '+oldVal);
+                    console.log(newVal,oldVal);
                     this.updated = '네';
                 }
             }

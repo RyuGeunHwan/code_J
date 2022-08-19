@@ -1,0 +1,92 @@
+# Object(객체)
+	+ 객체는 관련된 데이터와 함수의 집합.
+	+ 객체는 중괄호({})를 이용해서 만들수 있다.
+	+ 중괄호 안에는 ' key : value '인 하나의 프로퍼티(속성)로 구성되어있으며 프로퍼티를 여러개 넣을 수 있다.
+	+ key에는 문자형, value에는 모든 자료형을 넣을 수 있다.
+	+ 중괄호를 이용해 객체를 선언하는 것을 객체 리터럴(object literal) 이라고 한다.
+		문법 => let object = {key : value};
+	+ Object안에 Object가 올 수 있다.
+		let object = {
+			key1 : value, //key와 value는 하나의 프로퍼티이다.
+			key2 : function(){
+				return 1+2;
+			}
+		};
+# 프로퍼티 접근 방법
+	+ ex) let user = {
+					name : '류근환',
+					age : 28
+				};
+		접근방법 => user.name == '류근환';
+				  user.age == 28;	
+				  
+
+# 대괄호 표기법
+	+ 언제 쓰이는지 : 객체 > 프로퍼티 > 객체 > 프로퍼티 > 값
+	+ 여러 단어를 조합해 프로퍼티 키를 만든경우엔, 점 표기법을 사용해도 접근할 수 없다.
+		이럴경우 대괄호 표기법으로 접근할 수 있다.
+		ex) 
+		var objProperties = 'title'
+
+		var arr = [
+		  {
+			title : 'Java'
+		  },
+		  {
+			title : 'React'
+		  },
+		  {
+			title : 'ECMA Script'
+		  }
+		]
+
+		// 점 표기법
+		console.log(arr[1].title);
+
+		// 대괄호 표기법 1. 문자열로 접근
+		console.log(arr[1]['title']);
+
+		// 대괄호 표기법 2. 변수로 접근
+		console.log(arr[1][objProperties]);
+		
+# 상수 객체
+	+ javascript const는 재할당이 불가능 하다.
+		하지만, Object const같은경우 재할당은 안되지만, Key-Value 쌍을 추가하거나 변경하는 행위는 가능하다.
+		ex) const user = {
+			  name: "John"
+			};
+			user.name = "Pete"; // 
+			alert(user.name); // result ==> Pete
+					
+
+# for...in 반복문
+	ex) let user = {
+		  name: "John",
+		  age: 30,
+		  isAdmin: true
+		};
+
+		for(let key in user) {
+		  // 키
+		  console.log( key );  // name, age, isAdmin
+		  
+		  // 키에 해당하는 값
+		  console.log( user[key] ); // John, 30, true
+		}
+		
+# for...of 반복문
+		+ 오브젝트가 아니라 배열, 리스트같이 순차적으로 iterable한 데이터에 씀
+		+ for문을 돌 때 마다 arr1dl 가지고 있는 값이 value라는 지역변수에 할당 됨
+	ex) 
+		const arr1 = [1, 5, 6, 2];
+		for (value of arr1) {
+		  console.log(value);
+		}
+
+		
+		
+
+		
+		
+		
+		

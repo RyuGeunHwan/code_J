@@ -101,7 +101,7 @@ const cat = {
     }
   };
   
-  cat.foo1();	// undefined(error)
+  cat.foo1();	// undefined
 
   const cat = {
     name: 'meow',
