@@ -1,4 +1,6 @@
-# Object(객체)
+# Object(객체)  
+참고 사이트 =>  https://velog.io/@ahn-sujin/Javascript-%EA%B0%9D%EC%B2%B4Object%EB%9E%80
+참고 사이트 => https://velog.io/@surim014/%EC%9B%B9%EC%9D%84-%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EA%B7%BC%EC%9C%A1-JavaScript%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-part-7-Object-35k01xmdfp#%EC%B0%B8%EA%B3%A0%EC%82%AC%EC%9D%B4%ED%8A%B8
 	+ 객체는 관련된 데이터와 함수의 집합.
 	+ 객체는 중괄호({})를 이용해서 만들수 있다.
 	+ 중괄호 안에는 ' key : value '인 하나의 프로퍼티(속성)로 구성되어있으며 프로퍼티를 여러개 넣을 수 있다.
@@ -12,42 +14,59 @@
 				return 1+2;
 			}
 		};
+	+ 원시형 값을 제외한 나머지 값(함수, 배열, 정규 표현식 등)은 모두 객체이다.(원시형 값 == 변경 불가능한 값)
+	
 # 프로퍼티 접근 방법
-	+ ex) let user = {
-					name : '류근환',
-					age : 28
-				};
-		접근방법 => user.name == '류근환';
-				  user.age == 28;	
+	+점 표기법
+		ex) let user = {
+						name : '류근환',
+						age : 28
+					};
+			접근방법 => user.name == '류근환';
+					  user.age == 28;	
 				  
 
-# 대괄호 표기법
-	+ 언제 쓰이는지 : 객체 > 프로퍼티 > 객체 > 프로퍼티 > 값
-	+ 여러 단어를 조합해 프로퍼티 키를 만든경우엔, 점 표기법을 사용해도 접근할 수 없다.
-		이럴경우 대괄호 표기법으로 접근할 수 있다.
+	+대괄호 표기법
+		- 언제 쓰이는지 : 객체 > 객체 > 객체 > 객체 > 값  || 이름에 공백이 있을 때 || 프로퍼티 이름이 변수에 포함된 경우,프로퍼티 이름이 식별자에 허용되지 않는 문자(띄어쓰기, 하이픈)가 포함되어 있는경우
+		- 여러 단어를 조합해 프로퍼티 키를 만든경우엔, 점 표기법을 사용해도 접근할 수 없다.
+			이럴경우 대괄호 표기법으로 접근할 수 있다.
 		ex) 
-		var objProperties = 'title'
+			var objProperties = 'title'
 
-		var arr = [
-		  {
-			title : 'Java'
-		  },
-		  {
-			title : 'React'
-		  },
-		  {
-			title : 'ECMA Script'
-		  }
-		]
+			var arr = [
+			  {
+				title : 'Java'
+			  },
+			  {
+				title : 'React'
+			  },
+			  {
+				title : 'ECMA Script'
+			  }
+			]
 
-		// 점 표기법
-		console.log(arr[1].title);
+			// 점 표기법
+			console.log(arr[0].title); // Java
 
-		// 대괄호 표기법 1. 문자열로 접근
-		console.log(arr[1]['title']);
+			// 대괄호 표기법 1. 문자열로 접근
+			console.log(arr[1]['title']); // React
 
-		// 대괄호 표기법 2. 변수로 접근
-		console.log(arr[1][objProperties]);
+			// 대괄호 표기법 2. 변수로 접근
+			console.log(arr[2][objProperties]); // ECMA Script
+			
+		ex) 
+			let apple = 'sweet'
+			let fruits = {apple: '사과', sweet: '달다'}
+
+			console.log(fruits.apple); // 사과
+				// 기본적인 객체 프로퍼티에 접근하는 방법이다.
+				
+			console.log(fruits[apple]); // 달다
+				// fruits[apple]로 접근하면 초기화해놓은 apple변수의 값인 sweet를 가져와서
+					fruits.[애플의 값]이 되고 결과적으로 fruits.sweet가 된다.
+	+ 점 표기법과 대괄호 표기법 차이점
+		대괄호 표기법에서 대괄호 안에 변수가 들어갈 수 있다.
+
 		
 # 상수 객체
 	+ javascript const는 재할당이 불가능 하다.
@@ -59,7 +78,7 @@
 			alert(user.name); // result ==> Pete
 					
 
-# for...in 반복문
+# for...in 반복문(객체에서 사용하는 반복문은 for(var '객체를 담을 변수명' in '객체명'))
 	ex) let user = {
 		  name: "John",
 		  age: 30,
@@ -74,19 +93,26 @@
 		  console.log( user[key] ); // John, 30, true
 		}
 		
-# for...of 반복문
+# for...of 반복문 (배열에서 사용하는 반복문은 for(var '배열을 담을 변수명' of '배열명'))
 		+ 오브젝트가 아니라 배열, 리스트같이 순차적으로 iterable한 데이터에 씀
 		+ for문을 돌 때 마다 arr1dl 가지고 있는 값이 value라는 지역변수에 할당 됨
 	ex) 
-		const arr1 = [1, 5, 6, 2];
-		for (value of arr1) {
+		const arr = [1, 5, 6, 2];
+		for (var value of arr) {
 		  console.log(value);
 		}
+	// 1, 5, 6, 2
+		
+		
+# forEach
+	+ 배열.forEach( function(value, index, array){...반복 수행 코드...} )
+	  * 콜백함수의 매개변수로 value에 요소값, index에 인덱스, array에 원본 배열이 들어온다.
+	ex) 
+		var arr = [10, 20, 30];
 
-		
-		
-
-		
+		arr.forEach((value, index, array)=>{
+			console.log(index+' : '+value); // 0 : 10, 1 : 20, 2: 30 출력
+		});
 		
 		
 		

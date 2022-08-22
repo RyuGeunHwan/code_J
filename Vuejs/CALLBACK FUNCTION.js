@@ -101,3 +101,4 @@ Result ==>
 	}
 	newWords=myfilter(words, element => element.length>6);
 	console.log(newWords);
+	//newWords = (3) ['exuberant', 'destruction', 'present']
