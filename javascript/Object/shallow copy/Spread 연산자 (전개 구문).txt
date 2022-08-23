@@ -1,0 +1,21 @@
+# Spread 연산자 (전개 구문) : 객체 앞에 ... 을 사용하여 원하는 값을 합친다.
+			- 전개 연산자를 이용한 복사에는 1차원에서만 유효하다.
+			- 1차원 배열or객체와 1차원 배열or객체를 push하여서 넣어준다면 2차원 배열or객체로 생성되어 합쳐진다.
+			- spread연산자를 사용하거나 push.apply를 사용하게되면 1차원 배열로 합쳐진다.
+			- 내부 객체가 존재하는 경우 깊은 복사(deep copy)의 예외가 존재할 수 있다는 점이 있다.
+			ex) const arr1 = [1, 2, 3];
+				const arr2 = [4, 5, 6];
+				const arrWrap = [...arr1, ...arr2, 7,8,9];
+
+				console.log(arrWrap); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+				
+			ex) obj1의 name 프로퍼티만 변경하고 싶은 경우, 
+				const obj1 = { name: 'John', age: '20', flag: 'true', foo: 'bar' };
+				
+				const newObj = { ...obj1, name: 'Alice' };
+				// Object { name: 'Alice', age: '20', flag: 'true', foo: 'bar' }
+
+				console.log(obj1 === newObj); // false
+			참고 사이트 => https://ywtechit.tistory.com/208
+			참고 사이트 => https://learnjs.vlpt.us/useful/07-spread-and-rest.html
+			참고 사이트 => https://webisfree.com/2020-02-17/[%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8]-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%83%88%EB%A1%9C%EC%9A%B4-%EA%B0%9D%EC%B2%B4%EB%A1%9C-%EB%B3%B5%EC%82%AC-clone%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95

@@ -1,0 +1,18 @@
+# JSON.parse && JSON.stringify
+			1. 'JSON.stringify()'는 객체를 json 문자열로 변환하는데 이 과정에서 원본 객체와의 참조가 모두 끊어진다.
+			2. 객체를 json 문자열로 변환 후, JSON.parse()를 이용해 다시 원래 객체(자바스크립트 객체)로 만들어준다.
+				ex) const obj = {
+					  a: 1,
+					  b: {
+						c: 2,
+					  },
+					};
+
+					const copiedObj = JSON.parse(JSON.stringify(obj));
+
+					copiedObj.b.c = 3
+					
+			console.log(obj === copiedObj); //false
+			console.log(obj.b.c === copiedObj.b.c); //false
+			console.log(obj.b.c); // 2
+			console.log(copiedObj.b.c); // 3

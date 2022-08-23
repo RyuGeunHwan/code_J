@@ -1,0 +1,7 @@
+금일은 
+얕은 복사(shallow copy), 깊은 복사(Deep copy)
+원시데이터 참조데이터에 대해서 공부하였다.
+얕은 복사의 방법에는 Object.assign()과 spread(전개구문)라는 방법이있다.
+깊은 복사의 방법에는 JSON.parse && JSON.stringify 와 CloneDeep라이브러리의 Lodash 라는 방법이 있다.
+원시데이터와 참조 데이터의 차이점 
+얕은 복사와 깊은 복사의 차이점과 사용법을 공부 하였다.

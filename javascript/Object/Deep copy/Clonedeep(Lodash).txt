@@ -1,0 +1,17 @@
+# 라이브러리 사용 : Clonedeep라이브러리 == Lodash문법
+			'Lodash' 라이브러리를 사용하면 깊은 복사를 더 쉽게 할 수 있다.
+				ex) const obj = {
+					  a: 1,
+					  b: {
+						c: 2,
+					  },
+					};
+
+			***		const copiedObj = _.cloneDeep(obj);
+
+					copiedObj.b.c = 3
+
+			console.log(obj === copiedObj); //false
+			console.log(obj.b.c === copiedObj.b.c); //false
+			console.log(obj.b.c); // 2
+			console.log(copiedObj.b.c); // 3
