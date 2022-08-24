@@ -3,14 +3,6 @@
 			- 1차원 배열or객체와 1차원 배열or객체를 push하여서 넣어준다면 2차원 배열or객체로 생성되어 합쳐진다.
 			- spread연산자를 사용하거나 push.apply를 사용하게되면 1차원 배열로 합쳐진다.
 			- 내부 객체가 존재하는 경우 깊은 복사(deep copy)의 예외가 존재할 수 있다는 점이 있다.
-			
-			
-			ex) spread연산자를 사용하면 배열이 안리ㅏ 개별 요소로 결과값이 나온다.
-				const arr = [1,2,3,4];
-					console.log(arr); // (4) [1, 2, 3, 4]
-					console.log(...arr); // 1 2 3 4
-					console.log([...arr]); // (4) [1, 2, 3, 4]
-			
 			ex) const arr1 = [1, 2, 3];
 				const arr2 = [4, 5, 6];
 				const arrWrap = [...arr1, ...arr2, 7,8,9];

@@ -1,0 +1,29 @@
+# 비구조화 할당
+	+ 비구조화 할당은 객체와 배열로부터 프로퍼티를 쉽게 꺼낼 수 있는 문법
+		- ES5와 ES6 비교
+	ex) ES5문법
+		const toktokhanCompany = {
+		  company: "TokTokHan",
+		  name: ".dev",
+		  age: 1,
+		};
+
+		let company = contacts.company;
+		let name = contacts.name;
+		let age = contacts.age;
+
+		console.log(company); // TokTokHan
+		console.log(name); // .dev
+		console.log(age); // 1
+	ex) ES6문법
+		const ToktokhanCompany = {
+		  company: "TokTokHan",
+		  name: ".dev",
+		  age: 1,
+		};
+
+		let { company, name, age } = ToktokhanCompany;
+
+		console.log(company); // TokTokHan
+		console.log(name); // .dev
+		console.log(age); // 1

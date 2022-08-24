@@ -1,37 +1,37 @@
 # Object.assign()(객체들을 병합하는 메서드)
-
 	+ 열거할 수 있는 하나 이상의 출처 객체로부터 대상 객체로 속성을 복사할 때 사용한다.
-	ex) Object.assign(target, ..., ..., sources)
-		여기서 sources가되는 객체들은 target객체에 합쳐지며, 최종적으로 target객체가 return된다.
-	ex) var obj1 = {a:1}; 
-		var obj2 = {b:2}; 
-		var obj3 = {c:3}; 
-		var newObj = Object.assign({}, obj1, obj2, obj3); 
-	target == {}  sources == obj1, obj2, obj3  ==> 최종적으로 return은 target인 객체가 return 된다.
-		console.log(newObj); 
-		// {a: 1, b: 2, c: 3}
+	
+		ex) Object.assign(target, ..., ..., sources)
+			여기서 sources가되는 객체들은 target객체에 합쳐지며, 최종적으로 target객체가 return된다.
+		ex) var obj1 = {a:1}; 
+			var obj2 = {b:2}; 
+			var obj3 = {c:3}; 
+			var newObj = Object.assign({}, obj1, obj2, obj3); 
+		target == {}  sources == obj1, obj2, obj3  ==> 최종적으로 return은 target인 객체가 return 된다.
+			console.log(newObj); 
+			// {a: 1, b: 2, c: 3}
 
-	ex) var userAge = {
-		name : 'Lee',
-		age : 25
-		}
-
-		var userEmail = {
+		ex) var userAge = {
 			name : 'Lee',
-			email : 'dankthedust@gmail.com'
-		}
+			age : 25
+			}
 
-		var target = Object.assign(userAge, userEmail);
-			console.log(target) //{name: 'Lee', age: 25, email: 'dankthedust@gmail.com'}
-			console.log(userAge)  //{name: 'Lee', age: 25, email: 'dankthedust@gmail.com'}
-			console.log(target === userAge) // true
-		
-		
-		const a = {name : 'Lee'};
-		const b = {name : 'Lee'};
-			console.log(a); //{name: 'Lee'}
-			console.log(b); //{name: 'Lee'}
-			console.log(a===b); // false
+			var userEmail = {
+				name : 'Lee',
+				email : 'dankthedust@gmail.com'
+			}
+
+			var target = Object.assign(userAge, userEmail);
+				console.log(target) //{name: 'Lee', age: 25, email: 'dankthedust@gmail.com'}
+				console.log(userAge)  //{name: 'Lee', age: 25, email: 'dankthedust@gmail.com'}
+				console.log(target === userAge) // true
+			
+			
+			const a = {name : 'Lee'};
+			const b = {name : 'Lee'};
+				console.log(a); //{name: 'Lee'}
+				console.log(b); //{name: 'Lee'}
+				console.log(a===b); // false
 	
 	일치 연산자를 통해 비교한 결과가 target 과 userAge는 true,
 	a와 b는 false처럼 객체 값이 같음에도 둘의 결과가 다른 이유는 자바스크립트에서 객체는 값을 저장하는 것이 아닌 값을 저장하고 있는 메모리의 주소를 값으로 갖는다.

@@ -1,0 +1,4 @@
+# $emit
+
+	참고 영상 => https://www.youtube.com/watch?v=k1cZiYKZxKs
+	$emit 참고 사이트 => https://velog.io/@ducks1077/Vue.js-props-emit-%EA%B0%9C%EB%85%90-%EC%A0%95%ED%99%95%ED%95%98%EA%B2%8C-%EC%9E%A1%EA%B8%B0

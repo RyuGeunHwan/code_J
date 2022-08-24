@@ -10,7 +10,9 @@
 <body>
     <a href="https://kr.vuejs.org/v2/guide/components.html#%EC%A0%84%EC%97%AD-%EB%93%B1%EB%A1%9D">컴포넌트 공식사이트</a>
     <div id="component">
-       <componentExplanation></componentExplanation>
+
+       <componentExplanation></compcomponentExplanation>
+    
     </div>
     <hr>
     <div id="app">
@@ -40,31 +42,31 @@
         // })
 
 
-        // 컴포넌트 전역 등록(어떤 vue인스턴스에서도 사용가능)
-        Vue.component('kossie-button',{
-            //template안에는 html태그가 들어가게된다.
-            template: 
-            //template는 하나의 태그안에 모든 콘텐츠들이 있어야한다는 vue의 규칙이 있다.
-            `
-            <div>
-                {{name}} <br>
-                <hello-world></hello-world>
-                <button @click="changeText">Click</button>
-            </div>
-            `,
+        // // 컴포넌트 전역 등록(어떤 vue인스턴스에서도 사용가능)
+        // Vue.component('kossie-button',{
+        //     //template안에는 html태그가 들어가게된다.
+        //     template: 
+        //     //template는 하나의 태그안에 모든 콘텐츠들이 있어야한다는 vue의 규칙이 있다.
+        //     `
+        //     <div>
+        //         {{name}} <br>
+        //         <hello-world></hello-world>
+        //         <button @click="changeText">Click</button>
+        //     </div>
+        //     `,
 
-            //컴포넌트 만들때 data는 함수를 만들어서 Object를 return 해주면 된다.
-            data(){
-                return{
-                    name: 'component'
-                }
-            },
-            methods:{
-                changeText(){
-                    this.name = 'app updated'
-               }
-            }
-        });
+        //     //컴포넌트 만들때 data는 함수를 만들어서 Object를 return 해주면 된다.
+        //     data(){
+        //         return{
+        //             name: 'component'
+        //         }
+        //     },
+        //     methods:{
+        //         changeText(){
+        //             this.name = 'app updated'
+        //        }
+        //     }
+        // });
             
         Vue.component('componentExplanation',{
             template:
@@ -89,9 +91,6 @@
         });
 
         
-
-
-
         // hello world 지역등록
         const HelloWorld = {
             template: `<div>hello world</div>`

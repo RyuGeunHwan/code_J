@@ -1,4 +1,4 @@
-# 라이브러리 사용 : Clonedeep라이브러리 == Lodash문법
+# 라이브러리 사용 : Clonedeep라이브러리에 Lodash문법
 			'Lodash' 라이브러리를 사용하면 깊은 복사를 더 쉽게 할 수 있다.
 				ex) const obj = {
 					  a: 1,
