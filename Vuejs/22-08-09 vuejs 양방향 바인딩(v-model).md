@@ -1,3 +1,6 @@
+# v-model
+	- <a src="https://velog.io/@skyepodium/Vue.js-v-model%EA%B3%BC-syntax-sugar-7ajrp44tnq">v-model 참고사이트</a><br>
+```HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +29,6 @@
         <!-- minus이라는 함수 호출 -->
         <button v-on:click="minus()">빼기</button>
         <br>
-        </br>
         <!-- from태그는 default: reload를 한다. -->
         <!-- .prevent  =>  이벤트 수식어로써 제출 이벤트가 페이지를 리로드하지 않습니다. -->
         <br v-on:submit.prevent="submit">
@@ -88,3 +90,4 @@
     </script>
 </body>
 </html>
+```

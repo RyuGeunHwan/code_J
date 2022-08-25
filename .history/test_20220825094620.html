@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <component-b></component-b>
+    <script>
+        var bus = new Vue({
+  data:{
+    count :0
+  }
+})
+Vue.component('component-b',{
+  template:'<p>bus:{{ bus.count }}</p>',
+  computed: {
+    // bus 데이터를 산출 속성에서 사용하기
+    bus: function() { return bus.$data }
+  },
+  created: function(){
+    bus.$on('bus-event', function(){
+      this.count++
+    })
+  }
+})
+    </script>
+</body>
+</html>

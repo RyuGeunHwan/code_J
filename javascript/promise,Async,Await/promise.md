@@ -1,6 +1,10 @@
 비동기 처리 패턴 중 하나의 문법
 
-# promise : return값이 promise일 경우 resolve가 넘어갈 경우 the을 reject(error)가 넘어갈 경우 catch를 이용한다.		
+# promise : return값이 promise일 경우 resolve가 넘어갈 경우 the을 reject(error)가 넘어갈 경우 catch를 이용한다.	
+- <a src="https://learnjs.vlpt.us/async/01-promise.html">promise 참고사이트1</a><br>
+- <a src="https://joshua1988.github.io/web-development/javascript/promise-for-beginners/">promise 참고사이트2</a><br>
+- <a src="https://www.youtube.com/watch?v=JB_yU6Oe2eE">promise 참고 영상</a><br>
+```	
 	+ 언제 사용(비동기적인 처리) 되는데???	
 		1. 어떠한 명령을 실행할 때 그 명령이 언제 끝날지 예측하기 어려울 때.
 		2. 주가 되는 작업이 아닐때 비동기적인 처리를 많이한다.
@@ -11,10 +15,7 @@
 		2. 함수(A)를 호출해서 첫번째 .then의 콜백함수 파라미터에 resolve()의 결과값이 들어가게 된다.
 	  ex) 예제1) promise 기초를 예를 들면 promise함수 resolve파라미터에 1이 들어가있다. 
 		  getData.then(콜백함수(){})를 사용하게되면 콜백함수 파라미터에 resolve()의 결과값인 1이 들어가게된다.
-		
-  참고 사이트 => https://learnjs.vlpt.us/async/01-promise.html
-  참고 사이트 => https://joshua1988.github.io/web-development/javascript/promise-for-beginners/
-	
+
 	+	fetch : 'A Promise th at resolves to a Response object.' => fetch의 return값은 Promise이고 함수(fetch)가 성공적으로 실행이되면 Response라는 object를 줄 것이다.
 				 즉, fetch도 .then  ,  .catch 를 사용할 수 있다.
 		
@@ -24,8 +25,9 @@
 		
 		- Nested promise : then안에 then을 처리하는 방식(주석한 구간)
 		- promise chaining : response.json()을(promise) return하여 then과 then을 연결하는 방식 
-		
-		예제1) promise 기초
+```
+```html
+		<!-- 예제1) promise 기초 -->
 			<script>
 			function getData(){
 				new Promise(function(resolve, reject){
@@ -50,7 +52,7 @@
 			</script>
 		
 		
-		예제2) promise 기본
+		<!-- 예제2) promise 기본 -->
 			<script>
 			+ // new Promise()로 프로미스 객체를 생성하면 콜백 함수 인자로 resolve와 reject를 사용할 수 있다
 				new Promise(function(resolve, reject){
@@ -92,7 +94,7 @@
 			</script>
 
 
-		예제3) promise 실용
+		<!-- 예제3) promise 실용 -->
 			<script>
 				fetch('URL주소')
 					.then(function(resolved){ //서버에서 응답이 성공하면 then 콜백함수 실행
@@ -111,7 +113,7 @@
 		
 			
 			
-		예제4) 화살표 함수를 이용한 promise 
+		<!-- 예제4) 화살표 함수를 이용한 promise  -->
 		<script>
 			function increaseAndPrint(n) {
 			  return new Promise((resolve, reject) => {
@@ -151,3 +153,4 @@
 			  
 			//   Result ==> 1, 2, 3, 4, Error
 		 </script>
+```
