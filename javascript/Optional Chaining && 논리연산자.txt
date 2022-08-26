@@ -8,9 +8,11 @@
 		ex) let user = null;
 				alert( user?.address ); // undefined
 				alert( user?.address.street ); // undefined
+	
 	+ 위 예시에서 사용된 user?.는 user가 null이나 undefined인 경우만 처리할 수 있습니다.
 		user가 null이나 undefined가 아니고 실제 값이 존재하는 경우엔 반드시 user.address 프로퍼티는 있어야 합니다.
 			그렇지 않으면 user?.address.street의 두 번째 점 연산자에서 에러가 발생합니다. 여기서 에러가 나지 않으려면 user?.address?.street 작성해야합니다.
+	
 	+ 주의 사항 : 
 		1. ?.는 존재하지 않아도 괜찮은 대상에만 사용해야 합니다.
 			사용자 주소를 다루는 위 예시에서 논리상 user는 반드시 있어야 하는데 address는 필수값이 아닙니다. 
@@ -19,7 +21,7 @@
 			변수 user가 선언되어있지 않으면 user?.anything 평가시 에러가 발생합니다.
 				user?.address;  //  ReferenceError: user is not defined
 		3. 꼭 있어야 하는 값인데 없는 경우에 ?.을 사용하면 에러가 뜨지 않기 때문에 프로그래밍 에러를 쉽게 찾을 수 없습니다. 
-		
+		4. 읽기, 삭제하기는 가능하지만 쓰기는 사용할 수 없다.
 		
 
 # ?? (Nullish Coalescing)

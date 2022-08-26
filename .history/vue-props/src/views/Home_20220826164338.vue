@@ -3,7 +3,7 @@
   <div>
     <h1>This is Home Page</h1>
     <h2>이곳은 홈 페이지 입니다.</h2>
-    <Kossie-coder name="환근류"/>
+    <Kossie-coder />
   </div>
 </template>
 
