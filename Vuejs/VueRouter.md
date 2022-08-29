@@ -1,4 +1,6 @@
-# Vue Router	<참고 사이트 https://velog.io/@yjyoo/vue.js-Vue-Router-%EC%A0%95%EB%A6%AC>
+# Vue Router	
+- <a src="https://velog.io/@yjyoo/vue.js-Vue-Router-%EC%A0%95%EB%A6%AC">Router 참고 사이트 </a><br>
+```
 	+ 1. vue.js에서 페이지 간 이동을 위한 라이브러리
 	  2. 페이지 이동할 때 url 변경되면, 변경된 요소의 영역에 컴포넌트를 갱신
 	
@@ -26,4 +28,4 @@
 				component: User
 			  }
 			]
-		
+```

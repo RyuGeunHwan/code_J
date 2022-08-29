@@ -1,9 +1,10 @@
-# <a src="https://www.youtube.com/watch?v=ybFZK1-01zk">컴포넌트 생성 및 사용 영상</a>
+## <a src="https://www.youtube.com/watch?v=ybFZK1-01zk">컴포넌트 생성 및 사용 영상</a>
 
 # 위 영상 참고 후 props영상보면 상당한 도움이 된다.
 - <a src="https://www.youtube.com/watch?v=L8VLByQLtjc&t=1s">porps 참고영상 06:00분 부터 </a><br>
 - <a src="https://www.youtube.com/watch?v=7T8F7ZF52lo">props 활용영상 </a><br>
 - <a src="https://velog.io/@ducks1077/Vue.js-props-emit-%EA%B0%9C%EB%85%90-%EC%A0%95%ED%99%95%ED%95%98%EA%B2%8C-%EC%9E%A1%EA%B8%B0">props 참고 사이트</a>
+- <a src="https://riviere.tistory.com/m/188">props, emit 순서 </a><br>
 - <a src="https://v3.ko.vuejs.org/guide/component-props.html#%E1%84%83%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A3%E1%86%BC-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%92%E1%85%B3%E1%84%85%E1%85%B3%E1%86%B7">props Reference</a>
 ## props(property) => 부모 컴포넌트에서 자식 컴포넌트로 어떤 정보를 넘겨줄 때 사용하는 프로퍼티!
 ```

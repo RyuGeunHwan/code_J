@@ -1,5 +1,12 @@
 # v-model
 	- <a src="https://velog.io/@skyepodium/Vue.js-v-model%EA%B3%BC-syntax-sugar-7ajrp44tnq">v-model 참고사이트</a><br>
+	- <a src="https://v3.ko.vuejs.org/guide/component-basics.html#%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AA-%E1%84%92%E1%85%A1%E1%86%B7%E1%84%81%E1%85%A6-%E1%84%80%E1%85%A1%E1%86%B9-emit%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5">v-model 공식Reference</a>
+```
+# v-model 사용 문법
+	ex) <input v-model="searchText" />
+		==(동일한 문법)
+		<input :value="searchText" @input="searchText = $event.target.value" />
+```
 ```HTML
 <!DOCTYPE html>
 <html lang="en">

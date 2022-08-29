@@ -1,0 +1,51 @@
+# 반응형 기초(ex) ref...)
+- <a src="https://v3.ko.vuejs.org/api/refs-api.html#ref">ref Reference </a><br>
+- <a src="https://velog.io/@swhan9404/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%8D%94-%EB%82%98%EC%95%84%EA%B0%80%EA%B8%B0-vue-%EA%B0%80%EC%83%81DOM-ref
+">Virtual DOM(가상DOM), ref 참고 사이트 </a><br>
+```html
+# ref란? 
+	- 뷰에서 컴포넌트 또는 DOM에 접근하기 위해 사용하는 속성.
+	- 마운트된 요소에만 적용가능하다.(마운트되지 않은 요소에 사용하면 ref undefined 또는 속성이 없다는 에러를 만난다.)
+	- ref는 데이터를 다져오는 것은 가능하지만 본연의 역할은 자식 엘리먼트에 접근하는 기능이다!
+# 사용방법
+	- 접근 대상 ref속성 명시(접근하고 싶은 태그에 ref속성명을 할당하면 된다.)
+	- 사용 대상 this.$refs로 접근($ref로 해당 태그에 접근 할 수 있다.)
+	ex) 
+		<template>
+		<div>
+			<input type="text" ref="target">  ** 접근대상
+		</div>
+		</template>
+
+		<script>
+		export default {
+			mounted(){
+			console.log('target', this.$refs.target); ** 사용대상
+			}
+		}
+		</script>
+		
+# focus
+	돔이 접근해서 input tag에 포커싱 이벤트를 주는 방법
+	ex)
+		<input type="password" 
+        v-model="password" 
+        @keyup.enter="password" 
+        placeholder="비밀번호를 입력해주세요" 
+        ref="test">
+		
+		<script>
+		  password : function() { 
+			alert('비밀번호 유효성체크'); 
+			this.$refs.test.focus(); 
+		  }
+		</script> 
+		
+```
+## 유의사항
+```
+	1. 스펠링 중요! 대상=ref , 접근=refs
+*** 2.라이프사이클 훅 -> mounted(){...}에서 접근 할 것.
+		(beforeCreate또는 created에서 $refs를 접근하게 된다면 undefined 출력)
+	3. ref 속성은 컴포넌트가 랜더링이 된 이후 적용되기 때문에 반응형으로 구성하기 위한 computed 나 template 에서 사용하면 안됨 
+```
