@@ -1,0 +1,80 @@
+# web_2022 프로젝트 실행 방법
+	+ 1. https://github.com/codejone/web_2022.git 레파지토리 clone
+	  2. cmd 들어가서 명령어 npm install -f 해서 강제 다운로드
+	  3. 경로 : D:\work\web_2022 => web_2022.code-workspace 파일 열기
+	  4. 디버그및실행 아이콘 눌러서 Backend에 JAVA로 install
+	  5. 터미널에 경로 frontend 들어가서 npm run dev 하여 프로젝트 열기
+	+ 트러블 슈팅
+		package.json 파일 있는 경로에 npm install -f 다운로드 해야한다.
+		
+
+
+# UI 코드 분석
+	+ bladeManagement 
+		=> index.vue
+			- row태그 안에 col을 사용하여 레이아웃을 쉽게 조작할 수 있다.
+			<el-row>
+				<el-col></el-col>
+				<el-col></el-col>
+			</el-row>
+			
+			- <CompSearchArea>
+				// RMS [블레이드 관리, 사용자 관리] 검색 영역 컴포넌트 
+				// .native이벤트 = <componentName @이벤트핸들러.native="이벤트함수명"></componentName>
+			  </CompSearchArea>
+			
+			- 이벤트를 사용할 때 이벤트가 받아지지 않으면  .native를 붙이면 작동한다.
+				ex) @click.native="이벤트 발생 내용" , @keyup.native.enter="이벤트 발생 내용"
+			
+		=> CompSearchArea.vue
+			- el-form의 구조는 다음과 같다. <el-form> >  <el-form-item>  >  <el-XXX>
+				  <el-form :label-width="form-item의 폭 설정" :rules="">
+					//el-form은 전역설정이며, el-form의 속성 설정은 el-form-item에 각각 설정할 수 있다.
+					// :rules 참고 => https://intrepidgeeks.com/tutorial/form-data-verification-method-of-element-ui-framework
+						<el-form-item>
+							<el-XXX>
+							</el-XXX>
+						</el-form-item>
+				  </el-form>
+					참고 => https://intrepidgeeks.com/tutorial/three-sentences-of-el-form-in-ui-element
+				
+	+ Test History
+		=> index.vue
+			1. splitpanes(분할 창)
+				사용방법 = CDN 다운로드, 사용할 컴포넌트에 가져오기
+					import { Splitpanes, Pane } from 'splitpanes'
+					import 'splitpanes/dist/splitpanes.css'
+
+	+ User Managerment
+		=> index.vue
+			1. $nextTick
+				Javascript의 비동기 처리 특성때문에 DOM을 탐색하거나 수정하는 로직이 있을경우, DOM이 갱신 되기전에 DOM을 탐색해서 undefined나 null 에러가 발생하는 경우가 있다.
+					이때문에 DOM에 모든 변경사항이 완전히 반영된 후에 사용자 정의 로직을 실행할 수 있도록 하는 함수이다.(TIP : $nextTick은 모든 훅에 가능하지만 DOM이 모두 완성된 후인 mounted훅에 많이 사용한다.)
+
+
+
+
+
+# 질문 사항
+	1. $t($route.meta.i18n) => ' $ '문법의 의미가 무엇인지? == 언어변환
+	2. ::before & ::after 언제 사용하는건지?
+	3. 클래스 이름이 어떻게 여러개가 붙어있는지? == default
+	ex) class="el" => Devtools=class="el el-input is-focus"
+	4. <el-select>태그 속성에 :collapse-tags는???
+	
+	5. split pane(창 분할)은 어떻게 사용하는가?
+	
+	
+	
+	
+# error
+	- 트러블 슈팅
+		response data is null, error= Error: Network
+	
+	- 해결방법
+		XXX
+		npm 캐시 삭제 명령어                                                                                                                                                                                                                                                        
+	***	npm cache clean -f
+		모듈 충돌할때 캐시를 청소해주는 역할
+	
+	
