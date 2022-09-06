@@ -36,7 +36,7 @@
 							</el-XXX>
 						</el-form-item>
 				  </el-form>
-					참고 => https://intrepidgeeks.com/tutorial/three-sentences-of-el-form-in-ui-element
+					참고 사이트 => https://intrepidgeeks.com/tutorial/three-sentences-of-el-form-in-ui-element
 				
 	+ Test History
 		=> index.vue
@@ -44,14 +44,26 @@
 				사용방법 = CDN 다운로드, 사용할 컴포넌트에 가져오기
 					import { Splitpanes, Pane } from 'splitpanes'
 					import 'splitpanes/dist/splitpanes.css'
+				참고 사이트 => https://orefalo.github.io/svelte-splitpanes/?ref=madewithsvelte.com
 
 	+ User Managerment
 		=> index.vue
 			1. $nextTick
 				Javascript의 비동기 처리 특성때문에 DOM을 탐색하거나 수정하는 로직이 있을경우, DOM이 갱신 되기전에 DOM을 탐색해서 undefined나 null 에러가 발생하는 경우가 있다.
 					이때문에 DOM에 모든 변경사항이 완전히 반영된 후에 사용자 정의 로직을 실행할 수 있도록 하는 함수이다.(TIP : $nextTick은 모든 훅에 가능하지만 DOM이 모두 완성된 후인 mounted훅에 많이 사용한다.)
+			
 
 
+# error
+	- 트러블 슈팅
+		response data is null, error= Error: Network
+	
+	- 해결방법
+		XXX
+		npm 캐시 삭제 명령어                                                                                                                                                                                                                                                        
+	***	npm cache clean -f
+		모듈 충돌할때 캐시를 청소해주는 역할
+	
 
 
 
@@ -63,18 +75,9 @@
 	4. <el-select>태그 속성에 :collapse-tags는???
 	
 	5. split pane(창 분할)은 어떻게 사용하는가?
+		ex) 수직분할, 수평분할 어떻게 하는지?
+		
 	
 	
-	
-	
-# error
-	- 트러블 슈팅
-		response data is null, error= Error: Network
-	
-	- 해결방법
-		XXX
-		npm 캐시 삭제 명령어                                                                                                                                                                                                                                                        
-	***	npm cache clean -f
-		모듈 충돌할때 캐시를 청소해주는 역할
 	
 	

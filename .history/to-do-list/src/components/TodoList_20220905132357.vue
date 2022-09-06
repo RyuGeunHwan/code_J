@@ -15,11 +15,11 @@ export default {
     props:['propsdata'],
     methods: {
         removeTodo(todoItem, index){
-            console.log('value : '+todoItem);
-            console.log('index : '+index)
+            console.log(todoItem);
+            console.log(index)
             localStorage.removeItem(todoItem);
              //splice()는 첫번째 인자값(index)로부터 두번째 인자값(1)만큼을 삭제한다.
-            // this.todoItems.splice(index,1);
+            this.todoItems.splice(index);
         }
     }
 }
