@@ -53,6 +53,8 @@
 					이때문에 DOM에 모든 변경사항이 완전히 반영된 후에 사용자 정의 로직을 실행할 수 있도록 하는 함수이다.(TIP : $nextTick은 모든 훅에 가능하지만 DOM이 모두 완성된 후인 mounted훅에 많이 사용한다.)
 			
 
+	+ ModalDetailBlade
+		=> 
 
 # error
 	- 트러블 슈팅
@@ -76,8 +78,57 @@
 	
 	5. split pane(창 분할)은 어떻게 사용하는가?
 		ex) 수직분할, 수평분할 어떻게 하는지?
-		
+
+# DevTools 명령어	
+	- appOptions.setUntactMockMode(ture) : mockMode로 전환 ==> 단축키 Alt + 0 , 되돌아오기 Alt + 1
+	- appOptions.project='서버 이름' : 해당 프로젝트로 전환
+	- v.name : 해당 프로젝트 이름 가져오기 
+	- s.l : 해당 서버 정보 확인할 수 있음.
+	- s.s : 해당 서버 데이터 json파일 다운로드
+	- appOtions.baseURL : 해당 URL주소를 확인 할 수 있다.
 	
-	
-	
+# launch.json	
+	{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch AamApplication",
+            "request": "launch",
+            "mainClass": "com.codej.aam.AamApplication",
+            "projectName": "app-aam"
+        },
+        {
+            "type": "java",
+            "name": "Launch CpApplication",
+            "request": "launch",
+            "mainClass": "com.codej.cp.CpApplication",
+            "projectName": "app-cp"
+        },
+        {
+            "type": "java",
+            "name": "Launch RmsApplication",
+            "request": "launch",
+            "mainClass": "com.codej.rms.RmsApplication",
+            "projectName": "app-rms"
+        },
+        {
+            "type": "java",
+            "name": "Launch AES",
+            "request": "launch",
+            "mainClass": "com.codej.core.utils.cipher.aes.AES",
+            "projectName": "common-core"
+        },
+        {
+            "type": "java",
+            "name": "Launch RSATest",
+            "request": "launch",
+            "mainClass": "com.codej.core.utils.cipher.rsa.RSATest",
+            "projectName": "common-core"
+        }
+    ]
+}
 	
