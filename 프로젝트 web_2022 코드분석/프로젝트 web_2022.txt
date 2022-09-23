@@ -51,10 +51,7 @@
 			1. $nextTick
 				Javascript의 비동기 처리 특성때문에 DOM을 탐색하거나 수정하는 로직이 있을경우, DOM이 갱신 되기전에 DOM을 탐색해서 undefined나 null 에러가 발생하는 경우가 있다.
 					이때문에 DOM에 모든 변경사항이 완전히 반영된 후에 사용자 정의 로직을 실행할 수 있도록 하는 함수이다.(TIP : $nextTick은 모든 훅에 가능하지만 DOM이 모두 완성된 후인 mounted훅에 많이 사용한다.)
-			
 
-	+ ModalDetailBlade
-		=> 
 
 # error
 	- 트러블 슈팅
