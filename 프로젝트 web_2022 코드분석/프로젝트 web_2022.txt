@@ -63,19 +63,6 @@
 	***	npm cache clean -f
 		모듈 충돌할때 캐시를 청소해주는 역할
 	
-
-
-
-# 질문 사항
-	1. $t($route.meta.i18n) => ' $ '문법의 의미가 무엇인지? == 언어변환
-	2. ::before & ::after 언제 사용하는건지?
-	3. 클래스 이름이 어떻게 여러개가 붙어있는지? == default
-	ex) class="el" => Devtools=class="el el-input is-focus"
-	4. <el-select>태그 속성에 :collapse-tags는???
-	
-	5. split pane(창 분할)은 어떻게 사용하는가?
-		ex) 수직분할, 수평분할 어떻게 하는지?
-
 # DevTools 명령어	
 	- appOptions.setUntactMockMode(ture) : mockMode로 전환 ==> 단축키 Alt + 0 , 되돌아오기 Alt + 1
 	- appOptions.project='서버 이름' : 해당 프로젝트로 전환

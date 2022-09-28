@@ -1,3 +1,9 @@
+# compagGrid
+```
++ @rowClicked="onRowClicked" : @rowClicked이벤트를 사용하면 click을 하게되면 row의 Node정보가 들어온다.
+```
+
+
 # modal 관련 정리
 ```js
 Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트의 data와 property를 modalComponent에 넘겨주어여한다.
@@ -37,4 +43,73 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 + filter()
 + includes()
 
+```
+
+#component is속성
+```
+	<!-- is 속성에 해당되는 컴포넌트가 렌더링된다. -->
+	<component :is="componentId"></component>
+
+	<!-- 동적 컴포넌트는 등록된 컴포넌트나 prop로 전달된 컴포넌트를 렌더힝 할 수 있다. -->
+	<component :is="$options.components.child"></component>
+
+	<!-- 동적 컴포넌트는 문자열로 컴포넌트를 참조할 수 있다. -->
+	<component :is="condition ? 'HeaderComp' : 'FooterComp'"></component> 
+
+	<!-- 동적 컴포넌트는 네이티브 HTML 엘리먼트를 렌더링 할 수도 있다. -->
+	<component :is="href ? 'a' : 'span'"></component>
+
++ TIP
+	◽ keep-alive를 사용하는 동적 컴포넌트
+		is 속성을 사용하는 경우 다시 돌아왔을 때 계속해서 재렌더링 되어 기존의 클릭값이나 기존 데이터가 유지되지 않는다.
+		그래서 처음 생성된 컴포넌트 인스턴스가 캐시되기를 원하는 경우에 <keep-alive> 엘리먼트로 감싼다.
+		
+		ex) <keep-alive>
+				<component :is="cntComponent"></component>
+			</keep-alive>
+```
+# DevTools 명령어
+```
++ ref.ref이름.gridApi.getSelectedRows(); : ref를 클릭하여 체크상태 rows의 데이터를 불러옴.
+
+```
+
+# tagviews에 새로운 라우터 연결하는 방법
+```
+++ 라우팅
+1. router > aam > index.js 에서 
+	children : path 하나 더 추가 해줌 
+
+	ex)
+	  {
+			path: 'main-da',
+			component: () => import('@/views-aam/main-da/index'),
+			name: 'MainDa',
+			meta: { title: '메인2', icon: 'el-icon-document', affix: true }
+		  }
+
+2. src > views-aam > main-da > index.vue
+
+	main-da라는 폴더 하나 더 생성해주고 
+	만들어놓은 index.vue 파일 생성해서 넣어주기 
+
+	=> 왼쪽 nav바에 main-da 라우팅 된 것을 확인할 수 있음(nav바에 보이는 이름은 path 추가시 title로 설정했음)
+
+	메인2 라는 이름 설정은 title 에서 해주기 
+```
+# ModalTest
+```
++  template ==> @rowClicked = "onSelectedRows"
+
+
+	methods ==>	onSelectedRows(rowNode){
+					this.selectedModal = rowNode.data
+					this.handleOpenModal(this.selectedModal.modal_name, true)
+				}
+	
+	// rowClicked = row를 클릭하게 되면 onSelectedRows(rowNode) 함수 실행하여
+		해당 로우의 NodeData가 rowNode에 대입된다.
+		rowNode.data를 이용하여 rowData에 접근할 수 있다.
+		rowData를 이용하여 modal창을 열어주는 함수(handleOpenModal)에 접근할 수 있다.
+		이렇게되면 클릭 한번으로 여러개의 이벤트를 사용할 수 있다.(단, 이벤트 안에 실행되는 이벤트의 함수는 존재 하여야한다.)
 ```
