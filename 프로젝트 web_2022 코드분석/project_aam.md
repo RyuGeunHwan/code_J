@@ -97,6 +97,7 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 
 	메인2 라는 이름 설정은 title 에서 해주기 
 ```
+
 # ModalTest
 ```
 +  template ==> @rowClicked = "onSelectedRows"
@@ -112,4 +113,6 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 		rowNode.data를 이용하여 rowData에 접근할 수 있다.
 		rowData를 이용하여 modal창을 열어주는 함수(handleOpenModal)에 접근할 수 있다.
 		이렇게되면 클릭 한번으로 여러개의 이벤트를 사용할 수 있다.(단, 이벤트 안에 실행되는 이벤트의 함수는 존재 하여야한다.)
+		
+	// 한번의 이벤트 실행으로 n개의 함수를 실행하고 싶다면 메소드에 n개의 함수를 작성 후 이벤트실행 함수안에 n개의 함수를 넣어서 활용하라
 ```
