@@ -30,7 +30,7 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 	+ ModalTemplate.vue
 		- situationL
 		- async onOpen(model, actionMode) {
-			  this.situationL = model.testData
+			  this.situationL = model.testData 
 			  this.bladeInfo = await this._cloneDeep(model.param)
 		  }
 		  1. model안에 { param: param, testData: testData } 객체가 들어가 있는거임. 그래서 model.testData / model.param 사용가능
@@ -115,4 +115,10 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 		이렇게되면 클릭 한번으로 여러개의 이벤트를 사용할 수 있다.(단, 이벤트 안에 실행되는 이벤트의 함수는 존재 하여야한다.)
 		
 	// 한번의 이벤트 실행으로 n개의 함수를 실행하고 싶다면 메소드에 n개의 함수를 작성 후 이벤트실행 함수안에 n개의 함수를 넣어서 활용하라
+```
+
+# formatterTypeStyle(params) {}
+```
++ table의 속성에서 특정 cell의 원하는 이벤트 등을 함수로 설정해주어서 row 설정에 cellStyle: this.formatterTypeStyle 으로 작성하면 table의 정보가
+	params(매개변수)에 들어가게 된다. ' params.원하는 정보 '를 설정해주어서 사용하면 된다.
 ```
