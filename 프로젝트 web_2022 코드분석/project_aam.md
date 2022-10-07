@@ -42,7 +42,35 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 + map() 반복문
 + filter()
 + includes()
++ Reduce()
 
+```
+# Draggable (리스트 드래그로 순서 변경)
+```
+ 참고사이트 : https://avengersrhydon1121.tistory.com/277
+ 속성 참고사이트 : https://theheydaze.tistory.com/316
+```
+# Transfer (데이터 이동 리스트)
+```
+ 참고사이트 : https://element.eleme.io/#/en-US/component/transfer
+```
+# Nested Dialog (중첩 모달)
+```
+ 참고사이트 : https://element.eleme.io/#/en-US/component/dialog#attributes
+```
+
+# splitpanes(분할 창)
+```
+	+ 사용방법 = CDN 다운로드, 사용할 컴포넌트에 가져오기
+		import { Splitpanes, Pane } from 'splitpanes'
+		import 'splitpanes/dist/splitpanes.css'
+	참고 사이트 => https://orefalo.github.io/svelte-splitpanes/?ref=madewithsvelte.com
+```
+# $nextTick()
+```
+	+ DOM이 변경되기도 전에 DOM에 접근하려고 하면 찾지 못하여 undefined 이슈 발생한다. $nextTick() 콜백 함수를 사용하면 데이터가 모두 갱신된 다음에 그 다음 함수를 수행한다.
+	+ Javascript의 비동기 처리 특성때문에 DOM을 탐색하거나 수정하는 로직이 있을경우, DOM이 갱신 되기전에 DOM을 탐색해서 undefined나 null 에러가 발생하는 경우가 있다.
+		이 때문에 DOM에 모든 변경사항이 완전히 반영된 후에 사용자 정의 로직을 실행할 수 있도록 하는 함수이다.(TIP : $nextTick은 모든 훅에 가능하지만 DOM이 모두 완성된 후인 mounted훅에 많이 사용한다.)
 ```
 
 #component is속성
@@ -70,7 +98,13 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 ```
 # DevTools 명령어
 ```
-+ ref.ref이름.gridApi.getSelectedRows(); : ref를 클릭하여 체크상태 rows의 데이터를 불러옴.
+	- ref.ref이름.gridApi.getSelectedRows(); : ref를 클릭하여 체크상태 rows의 데이터를 불러옴.
+	- appOptions.setUntactMockMode(ture) : mockMode로 전환 ==> 단축키 Alt + 0 , 되돌아오기 Alt + 1
+	- appOptions.project='서버 이름' : 해당 프로젝트로 전환
+	- v.name : 해당 프로젝트 이름 가져오기 
+	- s.l : 해당 서버 정보 확인할 수 있음.
+	- s.s : 해당 서버 데이터 json파일 다운로드
+	- appOtions.baseURL : 해당 URL주소를 확인 할 수 있다.
 
 ```
 
@@ -90,8 +124,7 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 
 2. src > views-aam > main-da > index.vue
 
-	main-da라는 폴더 하나 더 생성해주고 
-	만들어놓은 index.vue 파일 생성해서 넣어주기 
+	해당프로젝트 폴더안에 라우팅할 폴더 하나 더 생성해주고 index.vue 파일 생성해서 넣어주기 
 
 	=> 왼쪽 nav바에 main-da 라우팅 된 것을 확인할 수 있음(nav바에 보이는 이름은 path 추가시 title로 설정했음)
 
@@ -119,6 +152,14 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 
 # formatterTypeStyle(params) {}
 ```
-+ table의 속성에서 특정 cell의 원하는 이벤트 등을 함수로 설정해주어서 row 설정에 cellStyle: this.formatterTypeStyle 으로 작성하면 table의 정보가
++ Grid를 사용하는 곳에서 사용! 속성 설정에서 사용!
++ table의 속성에서 특정 cell의 원하는 이벤트 등을 함수로 설정해주어서 row 설정에 " cellStyle: this.formatterTypeStyle " 으로 작성하면 table의 정보가
 	params(매개변수)에 들어가게 된다. ' params.원하는 정보 '를 설정해주어서 사용하면 된다.
+	
+	ex) formatterTypeStyle(params) {
+		  if (params.data.related_alarm) {
+			return { color: 'red !important', 'font-weight': 800 }
+		  }
+		}
 ```
+
