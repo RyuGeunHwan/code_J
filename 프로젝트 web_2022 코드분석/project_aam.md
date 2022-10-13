@@ -37,14 +37,28 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 			1-1) modal.js에서 open, onOpen 함수 참고
 ```
 
-# removeData 관련
+# JavaScript cellRenderer
 ```
-+ map() 반복문
-+ filter()
-+ includes()
-+ Reduce()
 
 ```
+
+# map() 반복문
+```
+
+```
+# filter()
+```
+
+```
+# includes()
+```
+
+```
+# Reduce()
+```
+
+```
+
 # Draggable (리스트 드래그로 순서 변경)
 ```
  참고사이트 : https://avengersrhydon1121.tistory.com/277
@@ -53,6 +67,10 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 # Transfer (데이터 이동 리스트)
 ```
  참고사이트 : https://element.eleme.io/#/en-US/component/transfer
+```
+# Dialog (Modal)
+```
+
 ```
 # Nested Dialog (중첩 모달)
 ```

@@ -1,0 +1,30 @@
+★ scope => 저장소, 데이터 공유하는 곳
+★ controller => js를 컨트롤 할 수 있는 곳
+★ template => UI구현
+★ SingletoneStore => controller 정의하는 곳
+★ config.properties => DB정보 있는 곳
+★ DevTools => Network => sql 입력하면 Query String 조회
+★ RCASqlMap.xml => Query String 정보와 Mybatis 바인딩 정보
+★ &nbsp; => Angular의 HTML에서 공백을 사용하고 싶을때 입력하는 특수문자
+★ devTools 정보 조회 명령어 
+	$tools.store // SingletonStore 정보 조회
+	angular.element($0).scope() // scope info 조회
+	angular.element($0).controller().constructor.name //template name(route name) 조회
+
+★ Angular 기본 개념
+	
+
+★ Constructor(생성자)
+	
+★ scope(유효범위)
+	
+
+★ 코드분석
+	
+
+
+
+
+
+
+
