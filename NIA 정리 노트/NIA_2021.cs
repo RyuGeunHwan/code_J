@@ -315,6 +315,7 @@ angular.element($0).controller().constructor.name //template name(route name) �
 	
 	116.89.191.47:8080
 	admin / admin
+	http://incodej-lab.iptime.org:18888/  (외부망 주소)
 
 	mq 포트: 6786
 	db 포트: 6544

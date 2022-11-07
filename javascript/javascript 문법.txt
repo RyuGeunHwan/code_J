@@ -1,0 +1,19 @@
+★ switch (참고사이트 = https://ko.javascript.info/switch)
+	+ 복수의 조건문(if)을 switch문으로 바꿀 수 있다.
+	ex) x = 2+2
+		(x) => {
+			switch (x) {
+			  case 3:
+				alert( '비교하려는 값보다 작습니다.' );
+				break;
+			  case 4:
+				alert( '비교하려는 값과 일치합니다.' );
+				break;
+			  case 5:
+				alert( '비교하려는 값보다 큽니다.' );
+				break;
+			  default:
+				alert( "어떤 값인지 파악이 되지 않습니다." );
+			}
+		}
+	case 4의 로직이 실행된다.

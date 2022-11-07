@@ -77,6 +77,20 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
  참고사이트 : https://element.eleme.io/#/en-US/component/dialog#attributes
 ```
 
+# CellRenderer
+```
+	+ 개념 : row가 아닌 개별의 특정 cell에만 이벤트를 주기 위하여 많이 사용.
+	
+	+ computed에서 정의해놓은 Grid관련 property의 columns에 원하는 columns에 
+		cellRendererFramework: 'CellRendererAam', cellRendererParams: { modal: 'CompLiveChannelSpread', action: this.handleOpenModal.bind(this) } 추가
+	
+	+ 해석 : 
+		1. cellRendererFramework: 'CellRendererAam' => import CellRendererAam from '@/views/tickets/component/CellRendererAam'에서 cell에 표현되어질 template와 함수를 정의한다.
+		2. cellRendererParams: { modal: 'CompLiveChannelSpread', action: this.handleOpenModal.bind(this) } => 
+				modal : 정의해 주었던 cell을 클릭하면 openModal될 modal을 명시하여준다.
+				action : openModal할 함수를 명시하여준다.(bind는 해당 colums에 명시하였던 modal의 정보를 바인딩하여 this에 넣어준것이다.)
+```
+
 # splitpanes(분할 창)
 ```
 	+ 사용방법 = CDN 다운로드, 사용할 컴포넌트에 가져오기
@@ -84,6 +98,7 @@ Modal Component하나로 n개의 창을 띄우기 위해서 n개의 컴포넌트
 		import 'splitpanes/dist/splitpanes.css'
 	참고 사이트 => https://orefalo.github.io/svelte-splitpanes/?ref=madewithsvelte.com
 ```
+
 # $nextTick()
 ```
 	+ DOM이 변경되기도 전에 DOM에 접근하려고 하면 찾지 못하여 undefined 이슈 발생한다. $nextTick() 콜백 함수를 사용하면 데이터가 모두 갱신된 다음에 그 다음 함수를 수행한다.
